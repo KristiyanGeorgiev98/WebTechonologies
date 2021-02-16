@@ -1,0 +1,15 @@
+= slide 'JavaScript в HTML' do
+  | <xmp>
+      <script src="file.js"></script>
+      <script>...</script>
+    </xmp>
+  p Атрибути на script тага:
+  ul
+    li.action
+      p `type` - какъв тип скрипт закачаме за HTML документа
+      p По default е `type="text/javascript"`
+    li.action `async` - сваля скрипта и спира парсването на HTML DOM дървото, за да изпълни сваления скрипт
+    li.action `defer` - сваля скрипта и едновременно с това парсва HTML DOM дървото. Скриптът се изпълнява, след като парсването приключи.
+  p.action
+    a [href="https://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html"] async vs defer attributes
+

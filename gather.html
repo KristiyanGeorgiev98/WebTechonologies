@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<script type="text/javascript">
+        function download() {
+            Notification.requestPermission().then(function(permission) {
+            alert("The file will be downloaded!");
+            var output = document.getElementById("output");
+            var text = output.textContent;
+            var filename = "gatheredPresentation.slim";
+            var file = new Blob([text], {type: "text/html"});
+            if (window.navigator.msSaveOrOpenBlob) // IE10+
+               window.navigator.msSaveOrOpenBlob(file, filename);
+            else { // Others
+               var a = document.createElement("a"),
+                    url = URL.createObjectURL(file);
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(function() {
+                    document.body.removeChild(a);
+                    window.URL.revokeObjectURL(url);  
+                }, 0); 
+            }
+        });
+    }
+    </script>
+    <meta charset="UTF-8">
+    <title>Gather files</title>
+    <link type="text/css" rel="stylesheet" href="./style/styleForGather.css">
+</head>
+<body>
+ <div class="btn_wrk"> <button class="custom_button_file" onclick="location.href='http://localhost/project/workspaces.php';" value="Separate presentation">Back to Workspaces</a>
+   </div>
+<h1 class= "header">Upload slim file</h1>
+<br><br>
+  <div class = "main">
+  <input  type="file" id="myFile" hidden="hidden" />
+  <input class="custom_button_file" type="button" id="custom_button" value="Choose a file" />
+  <span id="custom_text" >No file chosen, yet</span>
+    <div>
+      <br>
+<textarea style="width:500px;height: 400px" id="output"></textarea>
+      <br>
+<button class="button_gather" onclick="download()"> Gather</button>
+    </div>
+<script type="text/javascript">
+  const realFileBtn = document.getElementById("myFile");
+  const customButton = document.getElementById("custom_button");
+  const customText = document.getElementById("custom_text");
+  customButton.addEventListener("click",function(){
+      realFileBtn.click();                            
+    });
+  realFileBtn.addEventListener("change", function(){
+    if(realFileBtn.value){
+      customText.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1]; 
+    }
+    else{
+      customText.innerHTML = "No file chosen, yet";
+    }
+  });
+	var input = document.getElementById("myFile");
+	var output = document.getElementById("output");
+
+	input.addEventListener("change", function () {
+	  if (this.files && this.files[0]) {
+    var myFile = this.files[0];
+    var reader = new FileReader();
+
+    reader.addEventListener('load', function (e) {
+      output.textContent = output.textContent + e.target.result;
+      out
+    });
+    reader.readAsText(myFile,"UTF-8");
+
+    
+}
+	});
+	</script>
+</body>
+</html>

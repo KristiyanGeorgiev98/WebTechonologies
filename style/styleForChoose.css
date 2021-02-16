@@ -1,0 +1,39 @@
+body{
+  background: #045 linear-gradient(#289, #045) no-repeat fixed;
+}
+.btn_separate:hover, .btn_gather:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  opacity:0.8;
+}
+{
+  opacity:0.8;
+}
+.btn_separate{
+   background-color: cyan;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 24px;
+  float:left;
+}
+.btn_gather{
+   background-color: cyan;
+  border: 2px solid black;
+  color: black;
+  padding: 10px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 24px;
+  float:right;
+}
+.main{
+  margin:auto;
+  width:1000px;
+  padding:150px;
+}

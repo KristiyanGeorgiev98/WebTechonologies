@@ -1,0 +1,44 @@
+body{
+  background: #045 linear-gradient(#289, #045) no-repeat fixed;
+}
+h1{
+  text-align : center;
+}
+.pic4{
+  position: absolute;
+  right: 15%;
+  top : 35%;
+}
+.pic1{
+  position: absolute;
+  right: 70%;
+  top : 35%;
+}
+.pic3{
+  position: absolute;
+  right: 35%;
+  top : 35%;
+}
+.pic2:hover,.pic1:hover,.pic3:hover,.pic4:hover{  
+  opacity:0.8;
+}
+.pic2{
+  position: absolute;
+  right: 52%;
+  top : 40%;
+}
+.btn:hover{
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  opacity:0.8;
+}
+.btn{
+  background-color: cyan;
+  border: 2px solid black;
+  color: black;
+  padding: 8px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  border-radius: 24px;
+}

@@ -1,0 +1,16 @@
+= slide 'Обхождане на речник' do
+  pre.highlight.js
+    | var person = {firstName: 'John', lastName: 'Doe', age: 25};
+      var txt = '';
+      for (var key in person) {
+        txt += person[key] + ' ';
+      }
+
+      console.log(txt); // John Doe 25
+      console.log(Object.values(person).join(' ')); // John Doe 25
+
+      Object.keys(person);    // ['firstName', 'lastName', 'age']
+      Object.values(person);  // ['John', 'Doe', 25]
+      Object.entries(person); // [ ['firstName', 'John'], ['lastName', 'Doe'], ['age', 25] ]
+
+

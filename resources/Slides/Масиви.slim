@@ -1,0 +1,34 @@
+= slide 'Масиви' do
+  p Индексирана последователност от елементи. Няма ограничение за хомогенност на елементите.
+  pre.highlight.js
+    | var fibonacci = [undefined, true, 1, 'two', 3.0, 5, 7];
+
+      alert(fibonacci[3]);          // 'two'
+      alert(fibonacci.length);      // 7
+      alert(fibonacci.indexOf(3));  // 4
+      alert(fibonacci.indexOf(4));  // -1
+      alert(fibonacci.slice(1, 3)); // [true, 1]
+
+      // push, pop, shift, unshift, sort are also available
+
+      // ES5 gives us forEach, map, filter, reduce etc
+
+      typeof fibonacci              // object
+      Array.isArray(fibonacci)      // true
+
+      fibonacci.splice(index, removeCount, item1, item2, ...) ¿
+
+  .questions
+    li
+      p splice задава индекс от който да премахва removeCount елементи (ако е > 0) и добавя нови елементи (ако се подадат такива аргументи)
+      pre.highlight.js
+        | console.log(fibonacci.splice(0, 1, false)); // [undefined]
+          console.log(fibonacci); // [false, true, 1, 'two', 3.0, 5, 7]
+          fibonacci.splice(2, 0, 'one');
+          console.log(fibonacci); // [false, true, 'one', 1, 'two', 3.0, 5, 7]
+          console.log(fibonacci.splice(3, 1)); // [1]
+          console.log(fibonacci); // [false, true, 'one', 'two', 3.0, 5, 7]
+      p Не се използва често, понеже мутира масива и работата с index-и е error prone, но е най-ефективният начин да се премахне елемент от масив
+      p Може да ползвате <code>arr.filter(e => e !== item)</code> ако искате да получите нов масив без съответни елементи без мутиране на оригиналния
+
+

@@ -1,0 +1,47 @@
+<head>
+    <title>Separate files</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="./style/styleForSeparate.css">
+</head>
+<body>
+ <div class="btn_wrk"> <button class="custom_button_file" onclick="location.href='http://localhost/project/workspaces.php';" value="Separate presentation">Back to Workspaces</a>
+   </div>
+   <div class = "header"> <h1>Separate files</h1></div>
+  <div class="main">
+    <form action="add_file.php" method="post" enctype="multipart/form-data">
+        <input id="myFile" type="file" name="uploaded_file" hidden="hidden">
+      <input class="custom_button_file" type="button" id="custom_button" value="Choose a file" />
+  <span id="custom_text" >No file chosen, yet</span><br><br>
+      <input class="custom_button_file" type="button" id="custom_button2" value="Upload File" />
+        <input id="myFile2" type="submit" value="Upload file" hidden="hidden">
+    </form>
+    <div class="divbtn">
+      <p>
+        <a class="link_all_files"href="list_files.php">See all files</a>
+    </p>
+      </div>
+    </div>
+	<script type="text/javascript">
+	 const realFileBtn = document.getElementById("myFile");
+  const customButton = document.getElementById("custom_button");
+  const customText = document.getElementById("custom_text");
+  customButton.addEventListener("click",function(){
+      realFileBtn.click();                            
+    });
+  realFileBtn.addEventListener("change", function(){
+    if(realFileBtn.value){
+      customText.innerHTML = realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1]; 
+    }
+    else{
+      customText.innerHTML = "No file chosen, yet";
+    }
+  });
+  const realFileBtn2 = document.getElementById("myFile2");
+  const customButton2 = document.getElementById("custom_button2");
+  customButton2.addEventListener("click",function(){
+      realFileBtn2.click();                            
+    });
+	</script>
+</body>
+</html>
+ 

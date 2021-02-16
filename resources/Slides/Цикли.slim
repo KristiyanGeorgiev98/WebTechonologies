@@ -1,0 +1,18 @@
+= slide 'Цикли' do
+  pre.highlight.js
+    | while (condition) { ... }
+
+      do { ... } while (condition);
+
+      var cars = ['Audi', 'BMW', 'Mercedes-Benz', 'Opel', 'Porsche', 'Volkswagen'];
+
+      for (var i = 0; i < cars.length; i++) {
+        console.log(cars[i]);
+      }
+
+      cars.forEach(function(car, index){
+        console.log(car);
+      });
+
+      cars.forEach(car => console.log(car));
+

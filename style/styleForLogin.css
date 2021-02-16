@@ -1,0 +1,58 @@
+/* Bordered form */
+form {
+  margin:auto;
+  border: 3px solid #000;
+  border-radius : 24px;
+  max-width : 600px;
+}
+body{
+  background: #045 linear-gradient(#289, #045) no-repeat fixed;/*Понеже без теб тая страница не я виждам как се променя 
+ако е зле остави само цвета на body и button, button : hover които съм променил*/
+}
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: cyan;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 24px;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  opacity:0.8;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 25%;
+  border-radius: 30%;
+}
+
+button.login {
+  color: red;
+}
+/* Add padding to containers */
+.container {
+  padding: 30px;
+}
