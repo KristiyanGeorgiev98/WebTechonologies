@@ -30,9 +30,13 @@
         if($result) {
             $zip = new ZipArchive;
             $dir = __DIR__;
+            $zipFilepath = $dir . "/splitSlims.zip";
+            //Delete the previous presentation zip file
+            if (file_exists($zipFilepath)) {
+                unlink($zipFilepath);
+            }
             // Make sure the result is valid
-            while($row = mysqli_fetch_assoc($result)) { 
-                $zipFilepath = $dir . "/splitSlims.zip";
+            while($row = mysqli_fetch_assoc($result)) {
                 if ($zip->open($zipFilepath , ZipArchive::CREATE) === TRUE) {
                     $zip->addFromString($row['name'], $row['data']);
                 }
